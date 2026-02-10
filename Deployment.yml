@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: saas-project-pixel
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: saas-project-pixel
+  template:
+    metadata:
+      labels:
+        app: saas-project-pixel
+    spec:
+      containers:
+        - name: container-saas-project-pixel
+          image: hazzan99/pixel-saas:latest
+          imagePullPolicy: Always
+
+   # change this
+          ports:
+            - containerPort: 8000

@@ -1,0 +1,23 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: pixel-saas-cron
+spec:
+  schedule: "0 2 * * *"   # every day at 2 AM
+  jobTemplate:
+    spec:
+      backoffLimit: 2
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: pixel-saas-cron
+              image: hazzan99/pixel-saas:latest
+              imagePullPolicy: Always
+              command:
+                - python
+                - manage.py
+                - clearsessions
+              env:
+                - name: DJANGO_SETTINGS_MODULE
+                  value: myproject.settings

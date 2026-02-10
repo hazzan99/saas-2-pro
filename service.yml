@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: saas-project-pixel-service
+spec:
+  selector:
+    app: saas-project-pixel
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
