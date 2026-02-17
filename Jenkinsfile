@@ -3,8 +3,8 @@ pipeline {
 
     environment {
         EC2_USER = 'ec2-user'
-        EC2_HOST = '16.170.140.55'
-        PRIVATE_KEY_PATH = 'C:/Users/Success/Downloads/electricaa-key.pem'
+        EC2_HOST = '51.20.137.162'
+        PRIVATE_KEY_PATH = 'C:/Users/PIXEL/Downloads/pixel.pem'
         IMAGE_NAME = 'hazzan99/pixel-saas-jen'
         IMAGE_TAG = "build-${env.BUILD_NUMBER}"
         GIT_REPO = 'https://github.com/hazzan99/saas-2-pro.git'
